@@ -15,12 +15,20 @@ export interface UserPreferences {
   nativeLanguage: string;
   practiceLanguage: string;
   mode: PracticeMode;
+  isPremium: boolean;
+  dailyUsage: {
+    translations: number;
+    voiceMessages: number;
+    chatsStarted: number;
+    vocabCards: number;
+  };
 }
 
 export interface Message {
   id: string;
   sender: 'me' | 'partner' | 'system';
   text: string;
+  audioUrl?: string;
   timestamp: number;
   translation?: string;
   correction?: string;

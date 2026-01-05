@@ -4,8 +4,9 @@ import { LANGUAGES, PRACTICE_MODES } from '../constants';
 import { UserPreferences, PracticeMode } from '../types';
 import { ChevronRight } from 'lucide-react';
 
+// Fixed the Props interface to only require fields gathered during onboarding
 interface Props {
-  onComplete: (prefs: UserPreferences) => void;
+  onComplete: (prefs: Pick<UserPreferences, 'nativeLanguage' | 'practiceLanguage' | 'mode'>) => void;
 }
 
 export const Onboarding: React.FC<Props> = ({ onComplete }) => {
@@ -15,6 +16,7 @@ export const Onboarding: React.FC<Props> = ({ onComplete }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    // Correctly passing only the fields gathered in this component to satisfy the updated Pick type
     onComplete({
       nativeLanguage: native,
       practiceLanguage: practice,
