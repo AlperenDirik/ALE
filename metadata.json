@@ -1,0 +1,7 @@
+{
+  "name": "Copy of ALE — Anonymous Language Exchange",
+  "description": "A privacy-first, ultra-simple language exchange platform where you can practice speaking with anonymous partners and get AI-powered corrections.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
